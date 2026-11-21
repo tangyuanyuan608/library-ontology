@@ -161,6 +161,24 @@
     
 
 
+    <!-- http://www.example.org/library#已借阅读者 -->
+
+    <owl:Class rdf:about="http://www.example.org/library#已借阅读者">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.example.org/library#读者"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.example.org/library#借阅"/>
+                        <owl:someValuesFrom rdf:resource="http://www.example.org/library#图书"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
     <!-- http://www.example.org/library#中文图书 -->
 
     <owl:Class rdf:about="http://www.example.org/library#中文图书">
